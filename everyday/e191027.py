@@ -12,15 +12,16 @@ def solution(string):
 
 
 # def solution(string):
-#     answer = 0
-#     tmp = string[0]
-#     for x in string[1:]:
-#         if x in tmp:
-#             answer = max(answer, len(tmp))
-#             tmp = x
-#         else:
-#             tmp += x
-#     return answer
+# 	d = dict()  # char: int
+# 	s, e = 0, 0
+# 	for i in range(len(string)):
+# 		c = string[i]
+# 		# print(d, s, e, i, c)
+# 		if c in d:
+# 			s = max(d[c], s)
+# 		e = max(e, i - s + 1)
+# 		d[c] = i + 1
+# 	return e
 
 
 print(solution('aabcbcbc'))
