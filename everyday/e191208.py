@@ -1,4 +1,4 @@
-from everyday.lib.linkedlist import Node, list_to_linked
+from lib.linkedlist import Node, list_to_linked
 
 
 def solution(list1, list2):

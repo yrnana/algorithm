@@ -1,4 +1,4 @@
-from everyday.lib.linkedlist import list_to_linked
+from lib.linkedlist import list_to_linked
 
 
 def solution(head, N):
