@@ -6,39 +6,39 @@ from itertools import combinations
 
 
 def is_cand_key(relation, key_arr):
-	tmp_arr = []
-	for row in relation:
-		tmp = []
-		for k in key_arr:
-			tmp.append(row[k])
-		tmp = '+'.join(tmp)
-		if tmp in tmp_arr:
-			return False
-		tmp_arr.append(tmp)
-	return True
+    tmp_arr = []
+    for row in relation:
+        tmp = []
+        for k in key_arr:
+            tmp.append(row[k])
+        tmp = '+'.join(tmp)
+        if tmp in tmp_arr:
+            return False
+        tmp_arr.append(tmp)
+    return True
 
 
 def key_is_subset(key, keys):
-	for k in keys:
-		if k.issubset(key):
-			return False
-	return True
+    for k in keys:
+        if k.issubset(key):
+            return False
+    return True
 
 
 def solution(relation):
-	w = len(relation[0])  # 키의 경우의 수 2^4-1=15
-	column = [x for x in range(w)]
-	keys = []
-	for n in range(1, w + 1):
-		c = [set(x) for x in combinations(column, n)]
-		tmp_key = []
-		for key in c:
-			if key_is_subset(key, keys):
-				tmp_key.append(key)
-		for key in tmp_key:
-			if is_cand_key(relation, key):
-				keys.append(key)
-	return len(keys)
+    w = len(relation[0])  # 키의 경우의 수 2^4-1=15
+    column = [x for x in range(w)]
+    keys = []
+    for n in range(1, w + 1):
+        c = [set(x) for x in combinations(column, n)]
+        tmp_key = []
+        for key in c:
+            if key_is_subset(key, keys):
+                tmp_key.append(key)
+        for key in tmp_key:
+            if is_cand_key(relation, key):
+                keys.append(key)
+    return len(keys)
 
 
 print(solution([["100", "ryan", "music", "2"], ["200", "apeach", "math", "2"], ["300", "tube", "computer", "3"],

@@ -7,22 +7,22 @@
 
 
 def solution(msg):
-	answer = []
-	max_idx = 26
-	d = dict()
-	for i in range(1, max_idx + 1):
-		d[chr(i + 64)] = i
-	l = len(msg)
-	i = 0
-	while i < l:
-		j = i + 2
-		while j <= l and msg[i:j] in d:  # msg[i:j] : 사전에 없는 수
-			j += 1
-		answer.append(d[msg[i:j - 1]])  # 출력
-		max_idx += 1  # 최대 색인값 증가
-		d[msg[i:j]] = max_idx
-		i = j - 1
-	return answer
+    answer = []
+    max_idx = 26
+    d = dict()
+    for i in range(1, max_idx + 1):
+        d[chr(i + 64)] = i
+    l = len(msg)
+    i = 0
+    while i < l:
+        j = i + 2
+        while j <= l and msg[i:j] in d:  # msg[i:j] : 사전에 없는 수
+            j += 1
+        answer.append(d[msg[i:j - 1]])  # 출력
+        max_idx += 1  # 최대 색인값 증가
+        d[msg[i:j]] = max_idx
+        i = j - 1
+    return answer
 
 
 print(solution('KAKAO'))  # [11, 1, 27, 15]

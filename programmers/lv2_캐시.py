@@ -2,25 +2,25 @@ from collections import deque
 
 
 def solution(cacheSize, cities):
-	answer = 0
-	if cacheSize == 0:
-		return len(cities) * 5
-	deq = deque(maxlen=cacheSize)
-	for city in cities:
-		low_city = city.lower()
-		if low_city in deq:  # hit
-			answer += 1
-			i = deq.index(low_city)
-			el = deq[i]
-			del deq[i]
-			deq.appendleft(el)
-		else:
-			answer += 5
-			if len(deq) == cacheSize:
-				deq.pop()
-			deq.appendleft(low_city)
+    answer = 0
+    if cacheSize == 0:
+        return len(cities) * 5
+    deq = deque(maxlen=cacheSize)
+    for city in cities:
+        low_city = city.lower()
+        if low_city in deq:  # hit
+            answer += 1
+            i = deq.index(low_city)
+            el = deq[i]
+            del deq[i]
+            deq.appendleft(el)
+        else:
+            answer += 5
+            if len(deq) == cacheSize:
+                deq.pop()
+            deq.appendleft(low_city)
 
-	return answer
+    return answer
 
 
 print(solution(3, ["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"]))

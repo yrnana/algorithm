@@ -11,49 +11,49 @@
 
 
 def partition(w):
-	u, v = '', ''
-	cnt = [0, 0]
-	i = 0
-	for c in w:
-		u += c
-		i += 1
-		if c == '(':
-			cnt[0] += 1
-		else:
-			cnt[1] += 1
-		if cnt[0] == cnt[1]:
-			break
-	for i in range(i, len(w)):
-		v += w[i]
-	return u, v
+    u, v = '', ''
+    cnt = [0, 0]
+    i = 0
+    for c in w:
+        u += c
+        i += 1
+        if c == '(':
+            cnt[0] += 1
+        else:
+            cnt[1] += 1
+        if cnt[0] == cnt[1]:
+            break
+    for i in range(i, len(w)):
+        v += w[i]
+    return u, v
 
 
 def is_correct(u):
-	stack = []
-	for x in u:
-		if x == '(':
-			stack.append('(')
-		else:
-			if not stack or stack[-1] == ')':
-				return False
-			if stack[-1] == '(':
-				stack.pop()
-	return True
+    stack = []
+    for x in u:
+        if x == '(':
+            stack.append('(')
+        else:
+            if not stack or stack[-1] == ')':
+                return False
+            if stack[-1] == '(':
+                stack.pop()
+    return True
 
 
 def solution(p):
-	if p == '':
-		return ''
-	w = p
-	while True:
-		u, v = partition(w)
-		if is_correct(u):
-			return u + solution(v)
-		else:
-			string = '(' + solution(v) + ')'
-			for x in u[1:-1]:
-				string += ')' if x == '(' else '('
-			return string
+    if p == '':
+        return ''
+    w = p
+    while True:
+        u, v = partition(w)
+        if is_correct(u):
+            return u + solution(v)
+        else:
+            string = '(' + solution(v) + ')'
+            for x in u[1:-1]:
+                string += ')' if x == '(' else '('
+            return string
 
 
 print(solution('(()())()'))

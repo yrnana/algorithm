@@ -3,13 +3,13 @@
 
 
 def solution(arr):
-	ans = 1
-	for x in arr:
-		if x <= ans:
-			ans += x
-		else:
-			break
-	return ans
+    ans = 1
+    for x in arr:
+        if x <= ans:
+            ans += x
+        else:
+            break
+    return ans
 
 
 print(solution([1, 2, 3, 8]))

@@ -2,9 +2,9 @@ from math import gcd
 
 
 def solution(w, h):
-	g = gcd(w, h)
-	print(w, h, g)
-	return w * h - (w + h - g)
+    g = gcd(w, h)
+    print(w, h, g)
+    return w * h - (w + h - g)
 
 
 print(solution(8, 12))  # 80 = 8 * 12 - 4 * 4(gcd)

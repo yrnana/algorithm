@@ -1,14 +1,14 @@
 def solution(string):
-	answer = 0
-	start = 0
-	d = dict()
-	for i in range(len(string)):
-		c = string[i]
-		if c in d:
-			start = max(start, d[c])
-		answer = max(answer, i - start + 1)
-		d[c] = i + 1
-	return answer
+    answer = 0
+    start = 0
+    d = dict()
+    for i in range(len(string)):
+        c = string[i]
+        if c in d:
+            start = max(start, d[c])
+        answer = max(answer, i - start + 1)
+        d[c] = i + 1
+    return answer
 
 
 # def solution(string):

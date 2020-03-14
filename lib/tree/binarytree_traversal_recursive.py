@@ -14,23 +14,23 @@ from .binarytree import *
 
 # F B A D C E G I H
 def pre_order(node) -> TreeNode:
-	if node:
-		print(node.val, end=" ")
-		pre_order(node.left)
-		pre_order(node.right)
+    if node:
+        print(node.val, end=" ")
+        pre_order(node.left)
+        pre_order(node.right)
 
 
 # A B C D E F G H I
 def in_order(node) -> TreeNode:
-	if node:
-		in_order(node.left)
-		print(node.val, end=" ")
-		in_order(node.right)
+    if node:
+        in_order(node.left)
+        print(node.val, end=" ")
+        in_order(node.right)
 
 
 # A C E D B H I G F
 def post_order(node) -> TreeNode:
-	if node:
-		post_order(node.left)
-		post_order(node.right)
-		print(node.val, end=" ")
+    if node:
+        post_order(node.left)
+        post_order(node.right)
+        print(node.val, end=" ")

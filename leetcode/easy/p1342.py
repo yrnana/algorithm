@@ -1,3 +1,3 @@
 class Solution:
-	def numberOfSteps(self, num: int) -> int:
-		pass
+    def numberOfSteps(self, num: int) -> int:
+        pass

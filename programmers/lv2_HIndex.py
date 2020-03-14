@@ -1,13 +1,13 @@
 def solution(citations):
-	max_val = max(citations)
-	for h in range(max_val, 1, -1):
-		cnt = 0
-		for x in citations:
-			if x >= h:
-				cnt += 1
-		if cnt >= h:
-			return h
-	return 0
+    max_val = max(citations)
+    for h in range(max_val, 1, -1):
+        cnt = 0
+        for x in citations:
+            if x >= h:
+                cnt += 1
+        if cnt >= h:
+            return h
+    return 0
 
 
 print(solution([22, 42]))  # 2

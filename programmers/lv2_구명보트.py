@@ -1,16 +1,16 @@
 def solution(heights):
-	heights = [(i + 1, v) for i, v in enumerate(heights)]
-	answer = [0]
-	stack = [heights[0]]
-	for h in heights[1:]:
-		while stack and stack[-1][1] <= h[1]:
-			stack.pop()
-		if not stack:
-			answer.append(0)
-		else:
-			answer.append(stack[-1][0])
-		stack.append(h)
-	return answer
+    heights = [(i + 1, v) for i, v in enumerate(heights)]
+    answer = [0]
+    stack = [heights[0]]
+    for h in heights[1:]:
+        while stack and stack[-1][1] <= h[1]:
+            stack.pop()
+        if not stack:
+            answer.append(0)
+        else:
+            answer.append(stack[-1][0])
+        stack.append(h)
+    return answer
 
 
 # answer       stack   h
