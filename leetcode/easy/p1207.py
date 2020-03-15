@@ -2,9 +2,12 @@ from typing import List
 
 
 class Solution:
-    def sumZero(self, n: int) -> List[int]:
-        k = n // 2
-        if n % 2 == 0:
-            return [i for i in range(-k, 0)] + [i for i in range(1, k + 1)]
-        else:
-            return [i for i in range(-k, k + 1)]
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        from collections import Counter
+        c = Counter(arr)
+        key = []
+        for x in c.values():
+            if x in key:
+                return False
+            key.append(x)
+        return True
