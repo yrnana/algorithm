@@ -3,9 +3,8 @@ def solution(histogram):
     max_area = 0
     i = 0
     while i < len(histogram):
-        print(i, stack)
         if not stack or histogram[stack[-1]] <= histogram[i]:
-            stack.append(i)
+            stack.append(i)  # 현재 높이가 더 높으면 스택에 추가 (width 증가)
             i += 1
         else:
             # h * w

@@ -19,8 +19,8 @@ def solution(exp):
             stack.append(c)
     while stack:
         result.append(stack.pop())
-
     return ''.join(result)
 
 
+print(solution('a+(b-c)'))  # abc-+
 print(solution('a+b*(c^d-e)^(f+g*h)-i'))  # abcd^e-fgh*+^*+i-
