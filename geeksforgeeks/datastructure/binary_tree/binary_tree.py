@@ -11,6 +11,11 @@ class Node:
         self.left = None
         self.right = None
 
+    def __str__(self):
+        left = self.left.val if self.left else None
+        right = self.right.val if self.right else None
+        return 'val: {}, left: {}, right: {}'.format(self.val, left, right)
+
 
 def array_to_tree(arr):
     root = None
@@ -19,6 +24,8 @@ def array_to_tree(arr):
 
 def build_tree(arr, node, i):
     if i < len(arr):
+        if not arr[i]:
+            return None
         node = Node(arr[i])
         node.left = build_tree(arr, node.left, 2 * i + 1)
         node.right = build_tree(arr, node.right, 2 * i + 2)
