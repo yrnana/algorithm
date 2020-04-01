@@ -12,4 +12,4 @@ def routes(stack, node):
     stack.pop()
 
 
-print(routes([], array_to_tree([1, 2, 3, 4, 5])))
+routes([], array_to_tree([1, 2, 3, 4, 5]))
